@@ -1,1 +1,10 @@
-<h1>HIiiiiiiiiiiiiiiii</h1>
+{% if all_albums %}
+	<ul>
+	{% for album in all_albums %}
+		<li><a href="{% url 'detail' album.id %}">{{album.album_title}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<h3>Sorry!</h3>
+
+{% endif %}
